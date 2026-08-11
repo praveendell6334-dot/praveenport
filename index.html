@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antoni Arte | Graphic Design Portfolio</title>
+<meta name="description" content="Graphic Design portfolio — branding, social media, and creative direction.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header" role="banner">
+  <nav class="navbar" aria-label="Primary navigation">
+    <a href="#home" class="brand" aria-label="Antoni Arte home">
+      <span class="brand-icon" aria-hidden="true">▲</span>
+      <span class="brand-text">
+        ANTONI ARTE
+        <small>GRAPHIC DESIGN</small>
+      </span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="home">
+
+  <section class="hero" aria-label="Hero introduction">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-tag">
+        <span class="line"></span>
+        <span>GRAPHIC DESIGN</span>
+      </div>
+      <h1 class="hero-title">
+        <span>PORT</span><span>FOLIO</span>
+      </h1>
+      <div class="hero-meta">
+        <span class="years" id="yearRange">2017 — 2026</span>
+      </div>
+    </div>
+    <div class="hero-figure" aria-hidden="true">
+      <div class="figure-glow"></div>
+    </div>
+    <a href="#about" class="scroll-cue" aria-label="Scroll to about section">
+      <span></span>
+    </a>
+  </section>
+
+  <section id="about" class="about" aria-labelledby="aboutHeading">
+    <div class="section-head">
+      <a href="#home" class="brand small" aria-hidden="true">
+        <span class="brand-icon">▲</span>
+        <span class="brand-text">ANTONI ARTE</span>
+      </a>
+      <h2 id="aboutHeading">ABOUT ME</h2>
+    </div>
+
+    <div class="about-grid">
+      <article class="glass-card card-about" data-animate>
+        <h3>ABOUT ME</h3>
+        <p id="aboutText">
+          Hello, I'm a graphic designer with more than 9 years of experience
+          working with different companies and brands, both within and outside
+          the country. I've worked as a freelancer across market niches
+          including University, Restaurant, Fitness, Health and Social Media branding.
+        </p>
+      </article>
+
+      <div class="about-portrait" data-animate>
+        <div class="portrait-frame">
+          <div class="portrait-arrow" aria-hidden="true">▲</div>
+          <div class="portrait-name">
+            <strong>ANTONIO ESPAÑA</strong>
+            <span>GRAPHIC DESIGN</span>
+          </div>
+        </div>
+      </div>
+
+      <article class="glass-card card-edu" id="education" data-animate aria-labelledby="eduHeading">
+        <h3 id="eduHeading">EDUCATION</h3>
+        <p class="edu-lead">Advertising and Marketing Specialist</p>
+
+        <div class="edu-item">
+          <h4>Social Media – Digital Graphic Designer for RRSS</h4>
+          <p class="edu-sub">Studies completed in Valencia, Carabobo State — CUTAFU</p>
+        </div>
+
+        <div class="edu-item">
+          <h4>Social Media – Digital Graphic Designer for RRSS</h4>
+          <p class="edu-sub">Studies completed in Maracay, Aragua State — Final Art / Radio</p>
+        </div>
+
+        <div class="contact-block" id="contact">
+          <h3>CONTACT ME</h3>
+          <ul class="contact-list">
+            <li>
+              <span class="icon" aria-hidden="true">✉</span>
+              <a href="mailto:hello@antoniarte.studio">hello@antoniarte.studio</a>
+            </li>
+            <li>
+              <span class="icon" aria-hidden="true">☎</span>
+              <a href="tel:+10000000000">+1 (000) 000-0000</a>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <section id="skills" class="skills" aria-labelledby="skillsHeading">
+      <h3 id="skillsHeading">SOFTWARES</h3>
+      <ul class="skills-list" id="skillsList" aria-label="Software proficiency list">
+        <li class="skill-badge" style="--badge:#001e36" title="Adobe Photoshop">Ps</li>
+        <li class="skill-badge" style="--badge:#330000" title="Adobe Illustrator">Ai</li>
+        <li class="skill-badge" style="--badge:#4b0d2e" title="Adobe InDesign">Id</li>
+        <li class="skill-badge alt" title="CapCut">✂</li>
+        <li class="skill-badge" style="--badge:#1c1464" title="Adobe Animate">An</li>
+      </ul>
+    </section>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <a href="#home" class="brand" aria-hidden="true">
+    <span class="brand-icon">▲</span>
+    <span class="brand-text">
+      ANTONI ARTE
+      <small>GRAPHIC DESIGN</small>
+    </span>
+  </a>
+  <p>&copy; <span id="year"></span> Antoni Arte. All rights reserved.</p>
+</footer>
+
+<button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
