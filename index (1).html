@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praveen — Data Analyst &amp; Analytics Engineer</title>
+<meta name="description" content="Praveen — Data Analyst / Analytics Engineer portfolio. SQL, Python, Power BI, Tableau, predictive analytics, and business intelligence case studies.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Grid backdrop -->
+<div class="grid-backdrop" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<header class="site-header" id="top">
+  <nav class="navbar" aria-label="Primary">
+    <a href="#top" class="logo" aria-label="Praveen home">
+      <span class="logo-mark">P<span class="logo-dot">_</span></span>
+      <span class="logo-text">praveen<span class="accent">.</span>analytics</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#dashboard" class="nav-link">Live Dashboard</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#calculator" class="nav-link">ROI Tool</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme" title="Toggle theme">
+        <i class="fa-solid fa-moon" id="themeIcon"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-inner container">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse-dot"></span> Available for freelance &amp; full-time analytics roles</p>
+
+        <h1 class="hero-title">
+          Hi, I'm <span class="gradient-text">Praveen</span>.<br>
+          I turn raw data into<br>
+          <span class="typewriter-wrap">strategic <span id="typewriter" class="typewriter"></span><span class="caret">|</span></span>
+        </h1>
+
+        <p class="hero-sub">
+          A data analyst &amp; analytics engineer who bridges <strong>SQL</strong> and <strong>Python</strong> pipelines
+          with <strong>Business Intelligence</strong> storytelling and <strong>predictive analytics</strong> —
+          so decisions are made on evidence, not intuition.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fa-solid fa-chart-line"></i> View Projects
+          </a>
+          <a href="#" class="btn btn-ghost" id="resumeBtn">
+            <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-card float-card">
+          <div class="hero-card-header">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="hero-card-title">query_optimizer.sql</span>
+          </div>
+          <pre class="code-block"><code><span class="cm">-- Weekly cohort retention</span>
+<span class="kw">SELECT</span> cohort_week,
+       <span class="fn">ROUND</span>(retained * <span class="nm">100.0</span> / total, <span class="nm">1</span>) <span class="kw">AS</span> pct
+<span class="kw">FROM</span> cohort_retention
+<span class="kw">WHERE</span> region = <span class="st">'APAC'</span>
+<span class="kw">ORDER BY</span> cohort_week <span class="kw">DESC</span>;
+<span class="cm">-- runtime: 812ms → 4ms</span></code></pre>
+          <div class="mini-chart-wrap">
+            <canvas id="heroMiniChart" height="90"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KPI strip -->
+    <div class="kpi-strip container" id="kpiStrip">
+      <div class="kpi">
+        <span class="kpi-number" data-target="50" data-suffix="+">0</span>
+        <span class="kpi-label">Dashboards Built</span>
+      </div>
+      <div class="kpi">
+        <span class="kpi-number" data-target="99.8" data-decimals="1" data-suffix="%">0</span>
+        <span class="kpi-label">Query Optimization</span>
+      </div>
+      <div class="kpi">
+        <span class="kpi-number" data-target="3" data-suffix="+">0</span>
+        <span class="kpi-label">Years Experience</span>
+      </div>
+      <div class="kpi">
+        <span class="kpi-number" data-target="1.2" data-decimals="1" data-suffix="M+">0</span>
+        <span class="kpi-label">Rows Processed Daily</span>
+      </div>
+    </div>
+
+    <a href="#skills" class="scroll-cue" aria-label="Scroll to next section">
+      <i class="fa-solid fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- ============ SKILL MATRIX ============ -->
+  <section class="section" id="skills">
+    <div class="container">
+      <p class="section-eyebrow">// 01 — Capabilities</p>
+      <h2 class="section-title">The Skill Matrix</h2>
+      <p class="section-desc">A stack built for the full analytics lifecycle: extract, model, analyze, visualize, and communicate.</p>
+
+      <div class="skill-grid">
+
+        <article class="skill-card">
+          <div class="skill-card-head">
+            <i class="fa-solid fa-database"></i>
+            <h3>Data Engineering &amp; SQL</h3>
+          </div>
+          <ul class="skill-list">
+            <li>
+              <div class="skill-row"><span>PostgreSQL</span><span class="skill-pct">95%</span></div>
+              <div class="skill-bar"><span style="--pct:95%"></span></div>
+            </li>
+            <li>
+              <div class="skill-row"><span>SQL Query Optimization</span><span class="skill-pct">92%</span></div>
+              <div class="skill-bar"><span style="--pct:92%"></span></div>
+            </li>
+            <li>
+              <div class="skill-row"><span>ETL Pipelines</span><span class="skill-pct">88%</span></div>
+              <div class="skill-bar"><span style="--pct:88%"></span></div>
+            </li>
+          </ul>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-card-head">
+            <i class="fa-solid fa-chart-simple"></i>
+            <h3>Visualization &amp; BI</h3>
+          </div>
+          <ul class="skill-list">
+            <li>
+              <div class="skill-row"><span>Power BI</span><span class="skill-pct">94%</span></div>
+              <div class="skill-bar"><span style="--pct:94%"></span></div>
+            </li>
+            <li>
+              <div class="skill-row"><span>Tableau</span><span class="skill-pct">90%</span></div>
+              <div class="skill-bar"><span style="--pct:90%"></span></div>
+            </li>
+            <li>
+              <div class="skill-row"><span>Chart.js / D3 Fundamentals</span><span class="skill-pct">80%</span></div>
+              <div class="skill-bar"><span style="--pct:80%"></span></div>
+            </li>
+          </ul>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-card-head">
+            <i class="fa-solid fa-flask"></i>
+            <h3>Statistical Analysis &amp; Python</h3>
+          </div>
+          <ul class="skill-list">
+            <li>
+              <div class="skill-row"><span>Python (Pandas, NumPy)</span><span class="skill-pct">93%</span></div>
+              <div class="skill-bar"><span style="--pct:93%"></span></div>
+            </li>
+            <li>
+              <div class="skill-row"><span>R / Statistical Modeling</span><span class="skill-pct">78%</span></div>
+              <div class="skill-bar"><span style="--pct:78%"></span></div>
+            </li>
+            <li>
+              <div class="skill-row"><span>Predictive Modeling</span><span class="skill-pct">84%</span></div>
+              <div class="skill-bar"><span style="--pct:84%"></span></div>
+            </li>
+          </ul>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-card-head">
+            <i class="fa-solid fa-briefcase"></i>
+            <h3>Business Strategy</h3>
+          </div>
+          <ul class="skill-list">
+            <li>
+              <div class="skill-row"><span>Stakeholder Storytelling</span><span class="skill-pct">91%</span></div>
+              <div class="skill-bar"><span style="--pct:91%"></span></div>
+            </li>
+            <li>
+              <div class="skill-row"><span>KPI Framework Design</span><span class="skill-pct">87%</span></div>
+              <div class="skill-bar"><span style="--pct:87%"></span></div>
+            </li>
+            <li>
+              <div class="skill-row"><span>Excel / Financial Modeling</span><span class="skill-pct">89%</span></div>
+              <div class="skill-bar"><span style="--pct:89%"></span></div>
+            </li>
+          </ul>
+        </article>
+
+      </div>
+
+      <div class="chip-cloud" aria-label="Additional tools">
+        <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span>
+        <span class="chip">SQL</span><span class="chip">PostgreSQL</span><span class="chip">Power BI</span>
+        <span class="chip">Tableau</span><span class="chip">Excel</span><span class="chip">R</span>
+        <span class="chip">Chart.js</span><span class="chip">Git</span><span class="chip">Airflow</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section section-alt" id="projects">
+    <div class="container">
+      <p class="section-eyebrow">// 02 — Case Studies</p>
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-desc">Each project maps a business problem to a measurable outcome.</p>
+
+      <div class="filter-bar" role="tablist" aria-label="Filter projects by category">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="bi" role="tab" aria-selected="false">Power BI / Tableau</button>
+        <button class="filter-btn" data-filter="sql" role="tab" aria-selected="false">SQL &amp; Python</button>
+        <button class="filter-btn" data-filter="predictive" role="tab" aria-selected="false">Predictive Modeling</button>
+      </div>
+
+      <div class="project-grid" id="projectGrid">
+
+        <!-- Project 1 -->
+        <article class="project-card" data-category="bi">
+          <div class="project-chart-wrap">
+            <canvas class="project-chart" data-chart-type="bar" data-chart-id="p1"></canvas>
+          </div>
+          <div class="project-body">
+            <h3>Retail Revenue Command Center</h3>
+            <p class="project-problem">Regional managers had no unified view of sales performance across 40+ stores, causing delayed restocking decisions.</p>
+            <div class="pill-row">
+              <span class="pill">Power BI</span><span class="pill">DAX</span><span class="pill">SQL Server</span>
+            </div>
+            <p class="impact"><i class="fa-solid fa-arrow-trend-up"></i> Increased conversion rate by <strong>14%</strong> through faster stock-out alerts</p>
+            <div class="project-actions">
+              <a href="#" class="btn-sm btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a href="#" class="btn-sm btn-outline"><i class="fa-brands fa-github"></i> Repo</a>
+              <button class="btn-sm btn-solid case-study-trigger" data-project="p1">View Case Study</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card" data-category="sql">
+          <div class="project-chart-wrap">
+            <canvas class="project-chart" data-chart-type="line" data-chart-id="p2"></canvas>
+          </div>
+          <div class="project-body">
+            <h3>Query Latency Overhaul</h3>
+            <p class="project-problem">Nightly ETL jobs were taking 6+ hours, blocking morning reporting for the finance team.</p>
+            <div class="pill-row">
+              <span class="pill">SQL</span><span class="pill">Python</span><span class="pill">PostgreSQL</span>
+            </div>
+            <p class="impact"><i class="fa-solid fa-gauge-high"></i> Cut pipeline runtime by <strong>91%</strong>, from 6hrs to 32 minutes</p>
+            <div class="project-actions">
+              <a href="#" class="btn-sm btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a href="#" class="btn-sm btn-outline"><i class="fa-brands fa-github"></i> Repo</a>
+              <button class="btn-sm btn-solid case-study-trigger" data-project="p2">View Case Study</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card" data-category="predictive">
+          <div class="project-chart-wrap">
+            <canvas class="project-chart" data-chart-type="line" data-chart-id="p3"></canvas>
+          </div>
+          <div class="project-body">
+            <h3>Customer Churn Predictor</h3>
+            <p class="project-problem">Subscription business had no early-warning system to flag at-risk accounts before cancellation.</p>
+            <div class="pill-row">
+              <span class="pill">Python</span><span class="pill">Scikit-learn</span><span class="pill">R</span>
+            </div>
+            <p class="impact"><i class="fa-solid fa-users"></i> Reduced churn by <strong>22%</strong> via proactive retention triggers</p>
+            <div class="project-actions">
+              <a href="#" class="btn-sm btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a href="#" class="btn-sm btn-outline"><i class="fa-brands fa-github"></i> Repo</a>
+              <button class="btn-sm btn-solid case-study-trigger" data-project="p3">View Case Study</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card" data-category="bi">
+          <div class="project-chart-wrap">
+            <canvas class="project-chart" data-chart-type="doughnut" data-chart-id="p4"></canvas>
+          </div>
+          <div class="project-body">
+            <h3>Marketing Attribution Dashboard</h3>
+            <p class="project-problem">Marketing spend was allocated on gut feeling with no cross-channel attribution model.</p>
+            <div class="pill-row">
+              <span class="pill">Tableau</span><span class="pill">SQL</span><span class="pill">Excel</span>
+            </div>
+            <p class="impact"><i class="fa-solid fa-sack-dollar"></i> Reallocated budget for a <strong>31%</strong> lift in ROAS</p>
+            <div class="project-actions">
+              <a href="#" class="btn-sm btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a href="#" class="btn-sm btn-outline"><i class="fa-brands fa-github"></i> Repo</a>
+              <button class="btn-sm btn-solid case-study-trigger" data-project="p4">View Case Study</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LIVE DASHBOARD ============ -->
+  <section class="section" id="dashboard">
+    <div class="container">
+      <p class="section-eyebrow">// 03 — Live Demo</p>
+      <h2 class="section-title">Interactive Data Dashboard</h2>
+      <p class="section-desc">A working widget, not a screenshot. Toggle the parameters below and watch the model respond in real time.</p>
+
+      <div class="dashboard-panel">
+        <div class="dashboard-controls">
+          <div class="control-group">
+            <span class="control-label">Metric</span>
+            <div class="segmented" id="metricSegment">
+              <button class="segment active" data-metric="revenue">Revenue</button>
+              <button class="segment" data-metric="segments">Customer Segments</button>
+            </div>
+          </div>
+
+          <div class="control-group" id="forecastToggleWrap">
+            <span class="control-label">Forecast Overlay</span>
+            <label class="switch">
+              <input type="checkbox" id="forecastToggle" checked>
+              <span class="switch-slider"></span>
+            </label>
+          </div>
+
+          <div class="control-group">
+            <span class="control-label">Range</span>
+            <div class="segmented" id="rangeSegment">
+              <button class="segment" data-range="6">6mo</button>
+              <button class="segment active" data-range="12">12mo</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-chart-wrap">
+          <canvas id="dashboardChart" height="110"></canvas>
+        </div>
+
+        <div class="dashboard-legend" id="dashboardStats">
+          <div class="stat"><span class="stat-label">Total</span><span class="stat-value" id="statTotal">—</span></div>
+          <div class="stat"><span class="stat-label">Avg / mo</span><span class="stat-value" id="statAvg">—</span></div>
+          <div class="stat"><span class="stat-label">Trend</span><span class="stat-value" id="statTrend">—</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE TIMELINE ============ -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <p class="section-eyebrow">// 04 — Journey</p>
+      <h2 class="section-title">Experience &amp; Education</h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-marker"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2024 — Present</span>
+            <h3>Senior Data Analyst · Northwind Analytics</h3>
+            <p>Lead analyst for a cross-functional BI team, owning the revenue forecasting model and self-serve dashboard suite used by 200+ stakeholders.</p>
+            <ul class="timeline-impact">
+              <li>Built forecasting models with 96% accuracy against actuals</li>
+              <li>Cut ad-hoc reporting requests by 60% with self-serve dashboards</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"><i class="fa-solid fa-database"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2022 — 2024</span>
+            <h3>Data Analyst · Meridian Retail Group</h3>
+            <p>Owned the SQL warehouse layer and Power BI reporting stack for the retail operations division.</p>
+            <ul class="timeline-impact">
+              <li>Optimized core queries, reducing average runtime by 99.8%</li>
+              <li>Shipped 50+ dashboards adopted across 6 regional offices</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2018 — 2022</span>
+            <h3>B.Sc. in Statistics &amp; Data Science</h3>
+            <p>Coursework in applied statistics, database systems, and machine learning; capstone project on retail demand forecasting using R.</p>
+            <ul class="timeline-impact">
+              <li>Graduated with distinction in quantitative methods</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ROI CALCULATOR ============ -->
+  <section class="section" id="calculator">
+    <div class="container">
+      <p class="section-eyebrow">// 05 — Try It Yourself</p>
+      <h2 class="section-title">Impact Calculator</h2>
+      <p class="section-desc">A simplified version of the models I build for clients. Adjust the sliders to simulate a data-driven ROI estimate.</p>
+
+      <div class="calculator-panel">
+        <div class="calc-controls">
+
+          <div class="calc-field">
+            <div class="calc-field-head">
+              <label for="adSpend">Monthly Ad Spend</label>
+              <span class="calc-value" id="adSpendValue">$20,000</span>
+            </div>
+            <input type="range" id="adSpend" min="1000" max="100000" step="1000" value="20000">
+          </div>
+
+          <div class="calc-field">
+            <div class="calc-field-head">
+              <label for="churnRate">Current Churn Rate</label>
+              <span class="calc-value" id="churnRateValue">5%</span>
+            </div>
+            <input type="range" id="churnRate" min="1" max="30" step="0.5" value="5">
+          </div>
+
+          <div class="calc-field">
+            <div class="calc-field-head">
+              <label for="avgOrder">Average Order Value</label>
+              <span class="calc-value" id="avgOrderValue">$85</span>
+            </div>
+            <input type="range" id="avgOrder" min="10" max="500" step="5" value="85">
+          </div>
+
+        </div>
+
+        <div class="calc-results">
+          <div class="calc-result-card highlight">
+            <span class="calc-result-label">Projected Monthly Revenue Recovery</span>
+            <span class="calc-result-value" id="resultRevenue">$0</span>
+            <span class="calc-result-note">from a data-driven retention &amp; targeting model</span>
+          </div>
+          <div class="calc-result-mini">
+            <div>
+              <span class="calc-result-label">Est. Churn Reduction</span>
+              <span class="calc-result-value small" id="resultChurn">0%</span>
+            </div>
+            <div>
+              <span class="calc-result-label">12-Month ROI</span>
+              <span class="calc-result-value small" id="resultRoi">0%</span>
+            </div>
+          </div>
+          <p class="calc-disclaimer"><i class="fa-solid fa-circle-info"></i> Illustrative estimate for demonstration purposes only.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <p class="section-eyebrow">// 06 — Get In Touch</p>
+      <h2 class="section-title">Let's Talk Data</h2>
+      <p class="section-desc">Have a dataset that needs a story, or a dashboard that needs to actually get used? Reach out.</p>
+
+      <div class="contact-grid">
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+              <span class="field-error" id="nameError"></span>
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required>
+              <span class="field-error" id="emailError"></span>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Project inquiry, collaboration, etc." required>
+            <span class="field-error" id="subjectError"></span>
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your data problem..." required></textarea>
+            <span class="field-error" id="messageError"></span>
+          </div>
+          <button type="submit" class="btn btn-primary full-width">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+          <p class="form-success" id="formSuccess" role="status" aria-live="polite"></p>
+        </form>
+
+        <aside class="contact-side">
+          <a href="mailto:praveen.analytics@example.com" class="contact-link-card">
+            <i class="fa-solid fa-envelope"></i>
+            <div><span>Email</span><strong>praveen.analytics@example.com</strong></div>
+          </a>
+          <a href="https://github.com/" target="_blank" rel="noopener" class="contact-link-card">
+            <i class="fa-brands fa-github"></i>
+            <div><span>GitHub</span><strong>github.com/praveen</strong></div>
+          </a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener" class="contact-link-card">
+            <i class="fa-brands fa-linkedin"></i>
+            <div><span>LinkedIn</span><strong>linkedin.com/in/praveen</strong></div>
+          </a>
+          <a href="https://kaggle.com/" target="_blank" rel="noopener" class="contact-link-card">
+            <i class="fa-brands fa-kaggle"></i>
+            <div><span>Kaggle</span><strong>kaggle.com/praveen</strong></div>
+          </a>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="logo-mark">P<span class="logo-dot">_</span></span>
+      <span>© <span id="year"></span> Praveen. Built with semantic HTML, CSS and vanilla JS.</span>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:praveen.analytics@example.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://kaggle.com/" target="_blank" rel="noopener" aria-label="Kaggle"><i class="fa-brands fa-kaggle"></i></a>
+    </div>
+    <a href="#top" class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+  </div>
+</footer>
+
+<!-- ============ CASE STUDY MODAL ============ -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close case study">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="modal-content" id="modalContent">
+      <!-- injected by JS -->
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
